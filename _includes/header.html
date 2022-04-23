@@ -37,9 +37,8 @@
         {% else %}
         {% assign pagetitle = '' %}
         {% endif %}
-          <a href="https://owasp.org/store" class="cta-button white inset"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Store</a>
-          <a href="https://owasp.org/donate?reponame={{ site.github.repository_name }}{{ pagetitle }}" class="cta-button green">Donate</a>
-          <a href="https://owasp.org/membership" class="cta-button">Join</a>
+          <!-- <a href="https://owasp.org/donate?reponame={{ site.github.repository_name }}{{ pagetitle }}" class="cta-button green">Donate</a> -->
+          <a href="https://owasp.org/" class="cta-button">OWASP.org</a>
         </div>
       </div>
     </nav>
@@ -74,12 +73,13 @@
          var mlistr = "<ul class='mobile-menu hide-el' role='navigation' aria-label='mobile primary navigation'>";
 
           mlistr += "<li><a href='#' class='menu-toggler' aria-hidden='true'><i class='fa fa-times'></i></a></li>";
-          mlistr += "<li>";
-          mlistr += "<form role='search' method='get' action='https://owasp.org/search'>";   
-          mlistr += "<div class='search-div'>";
-          mlistr += "<input id='searchString' aria-label='search input' name='searchString' class='search-bar' type='search' placeholder='Search OWASP.org' required='true'>";
-          mlistr += "<button id='search-button' aria-label='search button' type='submit' class='fa fa-search' style='padding-left: 8px;'></button></div></form>";
-          mlistr += "</li>";
+          // maybe use google?
+          // mlistr += "<li>";
+          // mlistr += "<form role='search' method='get' action='https://owasp.org/search'>";   
+          // mlistr += "<div class='search-div'>";
+          // mlistr += "<input id='searchString' aria-label='search input' name='searchString' class='search-bar' type='search' placeholder='Search OWASP.org' required='true'>";
+          // mlistr += "<button id='search-button' aria-label='search button' type='submit' class='fa fa-search' style='padding-left: 8px;'></button></div></form>";
+          // mlistr += "</li>";
           $.each(data.menus, function (ndx, menu){
               listr += "<li><a href='" + menu.url + "'>" + menu.title + "</a>";
 
@@ -125,9 +125,7 @@
               mlistr += "</li>";
           });
           listr += "</ul>";
-          mlistr += "<li><a href='https://owasp.org/donate'>MAKE A DONATION</a></li>";
-          mlistr += "<li><a href='https://owasp.org/membership'>BECOME A MEMBER</a></li>";
-          mlistr += "<li><a href='https://owasp.org/sitemap'>SITEMAP</a></li>";
+
           mlistr += "</ul>";
           
           $('.desktop-logo').after(listr);
