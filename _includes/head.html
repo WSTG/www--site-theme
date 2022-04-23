@@ -50,39 +50,7 @@
   gtag('config', 'UA-4531126-1');
 </script> -->
 <!-- Google Analytics -->
-{% assign analytics = site.data.event-details.analytics | default: 'UA-4531126-1' %}
 
-<script src="{{site_base_url}}assets/js/js.cookie.js"></script>
-<script>
-  if(Cookies.get('cookies-ok') == 'true' && window.ga === undefined)
-  {
-    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', '{{ analytics }}', 'auto');
-    ga('send', 'pageview');
-  }
-  else if (Cookies.get('cookies-ok') == 'true')
-  {
-    ga('send', 'pageview');
-  }
-
-  function handleOutboundLinkClicks(event) {
-    var href = '';
-    if(event.target.href == undefined)
-      href = event.target.parentElement.href;
-    else
-      href = event.target.href
-  if(Cookies.get('cookies-ok') == 'true'){  
-    
-    ga('send', 'event', {
-      eventCategory: 'Outbound Link',
-      eventAction: 'click',
-      eventLabel: href,
-      transport: 'beacon'
-    });
-  }
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 <link rel="stylesheet" href="{{site_base_url}}assets/css/styles.css">
 <link rel="shortcut icon" type="images/x-icon" href="{{site_base_url}}favicon.ico">
